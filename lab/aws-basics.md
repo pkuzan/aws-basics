@@ -526,7 +526,23 @@ As above, Service Catalog will be used to increase the size of the EC2 instances
 TODO Check the size in ASG
 
 ### Create Rest Endpoint and Redeploy (optional)
-TODO
+
+```
+package com.jpmorgan.sample;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class EchoController {
+
+    @GetMapping("/api/echo")
+    public String echo(@RequestParam("input") String input) {
+        return input;
+    }
+}
+```
 
 ### SSH onto EC2 (optional)
 #### Get EC2 IP Address
