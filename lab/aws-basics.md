@@ -434,7 +434,7 @@ It is recommended that you paste these values into a temporary text document.
 * In the AWS Console, Select Services, S3
 * Click on Bucket whose name starts with apollo-fcn-cd-code-uu-id-
 * Click on Folder named 00001 (this represents your seal id)
-* To show version, click on the Show button next to the Version label
+* To show versions, click on the Show button next to the Version label
 * Click on the latest version of your zip file - the one that starts with your SID.
 * Make a note of the Link at the bottom of the page
 
@@ -480,7 +480,7 @@ In order to test our deployment, we need to get the URL of the Load Balancer.
 * Scroll down and find the Outputs section.
 * Copy the value of the URL key to the clipboard.
 
-In your browser paste the URL. You will be presented with the same HTTPS certificate warning as before.  
+In your browser paste the URL. You will be presented with the same SSL certificate warning as before.  
 Ignore the error and you should see a response similar to below.
 
 ```
@@ -494,17 +494,17 @@ Ignore the error and you should see a response similar to below.
 ```
 
 ### Scale Horizontally
-
 #### Increase Number of EC2 Instances
+TODO
 
 ### Scale Vertically
-
 #### Increase EC2 Instance Size
+TODO
 
 ### Create Rest Endpoint and Redeploy (optional)
+TODO
 
 ### SSH onto EC2 (optional)
-
 #### Get EC2 IP Address
 * In the AWS Console, select Services, Service Catalog
 * Select Provisioned products list 
@@ -522,8 +522,6 @@ Ignore the error and you should see a response similar to below.
    * Details of the EC2 instance will now be displayed
 * Find the IPv4 Public IP property at the bottom of the screen and copy the IP Address
 
-
-
 #### Download ssh key-pair from S3.  
 * In the AWS Console, Select Services, S3
 * Click on Bucket whose name starts with apollo-fcn-cd-code-uu-id-
@@ -532,23 +530,31 @@ Ignore the error and you should see a response similar to below.
 * Click download 
    * On a Mac or Linux download to ~/.ssh
 
-#### Windows Only - Install Putty
+#### Windows Only 
+#####  Install Putty
 Download from [https://www.putty.org//](https://www.putty.org/)  
 TODO - Someone with a Windows machine!
 
-#### Windows Only - Convert PEM to PPK
+##### Convert PEM to PPK
 TODO - Someone with a Windows machine!
-* Open PEM in Putty 
+* Open PEM in Putty
+* Export as PPK 
 
-#### Mac Only 
-Set permissions on the key
+##### Connect Using Putty
+TODO - Someone with a Windows machine!
+
+#### Mac / Linux Only 
+##### Set permissions on the key
 ```
 chmod 600 ~/.ssh/aws-basic-lab-key-pair.pem
 ```
-SSH onto EC2
+##### SSH onto EC2
 ```
 ssh -i ~/.ssh/aws-basic-lab-key-pair.pem ec2-user@${ec2-ip-address}
 ```
 #### Useful Directories
 
 /opt/codedeploy-agent/
+
+#### Enable Logging (Optional)
+TODO
