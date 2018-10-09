@@ -552,11 +552,11 @@ public class EchoController {
 ```
 mvn package
 ```
-Copy the newly created zip file to S3 as in the step above.
+Copy the newly created zip file to S3 as in the step above.  
 Create a new Deployment as above.
 
 #### Test the Endpoint
-The load balancer URL was discovered in an above task.
+Enter this URL into your browser, the load balancer URL was discovered in a task above.
 
 ```
 ${load-balancer-url}/api/echo?input=hello
@@ -572,7 +572,7 @@ hello
 * Select Provisioned products list 
 * Click on your Auto Scaling Group, it will be named ${your-sid}-asg
 * In the Outputs section locate the key named CloudformationStackARN
-* The value of the is a link, click on it
+* The value is a link, click on it
    * You'll now be navigated to the CloudFormation Stack that Service Catalog created
 * Expand the Resources section
 * Locate the resource with a Logical ID of AutoScalingGroup
