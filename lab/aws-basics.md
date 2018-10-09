@@ -404,7 +404,7 @@ We will now upload the zip file to the code S3 bucket.
    * 00001 represents your Seal Id
 * Click Upload
 * Click Add Files
-* Navigate to the zip file target/${you-sid}-aws-basics.zip and press Open
+* Navigate to the zip file target/${your-sid}-aws-basics.zip and press Open
 * Press Next
 * Press Next
 * Under Encryption select Amazon S3 Master Key
