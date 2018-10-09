@@ -525,10 +525,13 @@ As above, Service Catalog will be used to increase the size of the EC2 instances
 
 TODO Check the size in ASG
 
-### Create Rest Endpoint and Redeploy (optional)
+### Create Rest Endpoint and Redeploy (optional) Needs Work
+Create a file named EchoController.java in src/main/java/com/example/${your-sid}awsbasics, the directory should 
+already exist.  
+Copy the contents into the newly created file. Make sure you enter your SID in the package name.
 
 ```
-package com.jpmorgan.sample;
+package com.example.${your-sid}awsbasics;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -542,6 +545,25 @@ public class EchoController {
         return input;
     }
 }
+```
+
+#### Rebuild and Deploy the Application
+
+```
+mvn package
+```
+Copy the newly created zip file to S3 as in the step above.
+Create a new Deployment as above.
+
+#### Test the Endpoint
+The load balancer URL was discovered in an above task.
+
+```
+${load-balancer-url}/api/echo?input=hello
+```
+The response in the browser should be 
+```
+hello
 ```
 
 ### SSH onto EC2 (optional)
