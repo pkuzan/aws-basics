@@ -530,8 +530,12 @@ Ignore the error and you should see a response similar to below.
    * On a Mac or Linux download to ~/.ssh
 
 #### Windows Only - Install Putty
+Download from [https://www.putty.org//](https://www.putty.org/)  
+TODO - Someone with a Windows machine!
 
 #### Windows Only - Convert PEM to PPK
+TODO - Someone with a Windows machine!
+* Open PEM in Putty 
 
 #### Mac Only 
 Set permissions on the key
@@ -542,5 +546,6 @@ SSH onto EC2
 ```
 ssh -i ~/.ssh/aws-basic-lab-key-pair.pem ec2-user@${ec2-ip-address}
 ```
+#### Useful Directories
 
 /opt/codedeploy-agent/
