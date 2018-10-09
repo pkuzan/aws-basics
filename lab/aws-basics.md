@@ -9,7 +9,7 @@ Download from [https://www.java.com/en/download/](https://www.java.com/en/downlo
 #### Maven
 Download from [https://maven.apache.org/download.cgi](https://maven.apache.org/download.cgi)
 Select the Binary zip archive.
-Unzip 
+Unzip   
 Add to path TODO
 
 #### IDE (Optional)
@@ -27,7 +27,7 @@ Change the artifact name to ${your-sid}-aws-basics and add Actuator and Rest Rep
 Press the Generate Project button and a zip file named ${sid}-aws-basics.zip will be downloaded.
 ![](images/initializr-create.png?raw=true)
 
-Unzip the ${you-sid}-aws-basics.zip file.
+Unzip the ${your-sid}-aws-basics.zip file.
 Open a Command or Terminal
 Change directory to the directory where the zip file was unzipped.
 Execute the following commands.
@@ -48,7 +48,7 @@ If the applications has started successfully you should see the following respon
 Stop the application by pressing CTRL + C in the Terminal / Command window.
 
 ### Add SSL Support
-Connected Public cloud accounts only permit https on port 443. To enable this, we need to generate a self-signed certificate and configure the 
+Connected Public Cloud accounts only permit https on port 443. To enable this, we need to generate a self-signed certificate and configure the 
 application to use the certificate and port 443.
 
 ##### application.properties
@@ -94,7 +94,7 @@ Note, if you are running a Mac or Linux, you may have to run the application wit
 less than 1024 are restricted. 
 ```
 #Mac or Linux 
-sudo java -jar target/${sid}-aws-basics-0.0.1-SNAPSHOT.jar
+sudo java -jar target/${your-sid}-aws-basics-0.0.1-SNAPSHOT.jar
 ```
 In your browser enter the following URL.
 ```
