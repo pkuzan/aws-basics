@@ -495,11 +495,35 @@ Ignore the error and you should see a response similar to below.
 
 ### Scale Horizontally
 #### Increase Number of EC2 Instances
-TODO
+We will use Service Catalog to increase the number of running EC2 instances in our Auto Scaling Group.
+* In the AWS Console, select Services, Service Catalog
+* Select Provisioned products list 
+* Click on your Auto Scaling Group, it will be named ${your-sid}-asg
+* On the right of the screen click on the down-arrow on the ACTIONS button and select Update
+* Select the latest Product Version
+* Press the NEXT button
+* Scroll down to the Scaling Configurations section and locate the InstanceCount parameter
+* Change the value from 1 to 2
+* Then press the NEXT button
+* Then press UPDATE
+
+TODO - Check the new instance in ASG and ELB instances in-service 
 
 ### Scale Vertically
 #### Increase EC2 Instance Size
-TODO
+As above, Service Catalog will be used to increase the size of the EC2 instances in our Auto Scaling Group.
+* In the AWS Console, select Services, Service Catalog
+* Select Provisioned products list 
+* Click on your Auto Scaling Group, it will be named ${your-sid}-asg
+* On the right of the screen click on the down-arrow on the ACTIONS button and select Update
+* Select the latest Product Version
+* Press the NEXT button
+* Scroll down to the  EC2 Instance Configuration section and locate the InstanceType parameter
+* Change the value from t2.micro to t2.small
+* Then press the NEXT button
+* Then press UPDATE
+
+TODO Check the size in ASG
 
 ### Create Rest Endpoint and Redeploy (optional)
 TODO
