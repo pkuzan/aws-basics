@@ -15,8 +15,17 @@ Add to path TODO
 #### IDE (Optional)
 Download Intellij Community from [https://www.jetbrains.com/idea](https://www.jetbrains.com/idea)
 
+#### Credentials
+You will have been provided AWS authentication details.
+
+* AWS Account ID
+* Username
+* Temporary password 
+
 #### Conventions
-In the subsequent tasks, please substitute ${your-sid} with your SID. 
+In the subsequent tasks, please substitute :
+* ${your-sid} with your SID
+* ${your-account-id} with your AWS Account ID 
 
 ### Intro to Lab
 AWS blah blah
@@ -110,16 +119,9 @@ The response should be as before.
 ### Launch Auto-Scaling Group
 Auto Scaling Group is Service Catalog Product that creates an Auto Scaling Group and Load Balancer.
 
-#### Login to AWS Console
-You will have already been provided AWS authentication details.
-
-* AWS Account ID
-* Username
-* Temporary password 
-
-[https://console.aws.amazon.com](https://console.aws.amazon.com)  
-Ensure you are in the N. Virginia Region (US_East-1)
-
+* Login to the AWS Console [https://console.aws.amazon.com](https://console.aws.amazon.com)  
+   * Ensure you are in the N. Virginia Region (US_East-1)
+   * Use credentials you were given before the workshop
 * In the AWS Console, select Services, Service Catalog
 * Click on Products List in the tool bar on the left
    * To display the toolbar, click on the 3 horizontal lines on the top left of the screen 
@@ -130,6 +132,7 @@ Ensure you are in the N. Virginia Region (US_East-1)
 * Select the latest Product Version
 * Press Next
 * Enter Parameters below
+  * Remember to substitute your account id in the SSLCertificateArn parameter value
 
 |Parameter | Value |
 | --- | --- |
@@ -146,7 +149,7 @@ Ensure you are in the N. Virginia Region (US_East-1)
 | EnableAutoScaling | False |
 | InstanceCount | 1 |
 | HealthCheckEndpoint | / |
-| SSLCertificateArn | arn:aws:iam::198952797270:server-certificate/EJBSelfSignedCert|
+| SSLCertificateArn | arn:aws:iam::${your-account-id}:server-certificate/EJBSelfSignedCert|
 | Subnetids | TODO |
 | CPULow | 35 |
 | CPUHigh | 80 |
