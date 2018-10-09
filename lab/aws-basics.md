@@ -15,23 +15,25 @@ Add to path TODO
 #### IDE (Optional)
 Download Intellij Community from [https://www.jetbrains.com/idea](https://www.jetbrains.com/idea)
 
+#### Conventions
+In the subsequent tasks, please substitute ${your-sid} with your SID. 
+
 ### Intro to Lab
 AWS blah blah
 
 ### Generate Spring Boot Application.
 In your browser, navigate to [https://start.spring.io/](https://start.spring.io/)
-In this and subsequent tasks, please substitute ${sid} with your SID.
-Change the artifact name to ${sid}-aws-basics and add Actuator and Rest Repositories dependencies.
+Change the artifact name to ${your-sid}-aws-basics and add Actuator and Rest Repositories dependencies.
 Press the Generate Project button and a zip file named ${sid}-aws-basics.zip will be downloaded.
 ![](images/initializr.png?raw=true)
 
-Unzip the ${sid}-aws-basics.zip file.
+Unzip the ${you-sid}-aws-basics.zip file.
 Open a Command or Terminal
 Change directory to the directory where the zip file was unzipped.
 Execute the following commands.
 ```
 mvn package
-java -jar target/${sid}-aws-basics-0.0.1-SNAPSHOT.jar
+java -jar target/${your-sid}-aws-basics-0.0.1-SNAPSHOT.jar
 ```
 
 Insert the URL below into your browser
@@ -46,7 +48,7 @@ If the applications has started successfully you should see the following respon
 Stop the application by pressing CTRL + C in the Terminal / Command window.
 
 ### Add SSL Support
-Public cloud only permits https on port 443. To enable this, we need to generate a self-signed certificate and configure the 
+Connected Public cloud accounts only permit https on port 443. To enable this, we need to generate a self-signed certificate and configure the 
 application to use the certificate and port 443.
 
 ##### application.properties
@@ -109,7 +111,12 @@ The response should be as before.
 Auto Scaling Group is Service Catalog Product that creates an Auto Scaling Group and Load Balancer.
 
 #### Login to AWS Console
-TODO
+You will have already been provided AWS authentication details.
+
+* AWS Account ID
+* Username
+* Temporary password 
+
 [https://console.aws.amazon.com](https://console.aws.amazon.com)  
 Ensure you are in the N. Virginia Region (US_East-1)
 
@@ -118,7 +125,7 @@ Ensure you are in the N. Virginia Region (US_East-1)
 * Click auto_scaling
 * Click Launch Product
 * Enter a Provisioned Product Name
-   * ${sid}-asg e.g. a123456-asg
+   * ${your-sid}-asg e.g. a123456-asg
 * Select the latest Product Version
 * Press Next
 * Enter Parameters below
@@ -163,7 +170,7 @@ The easiest way to do this is from Service Catalog.
 
 * In the AWS Console, select Services, Service Catalog
 * Select Provisioned products list 
-* Click on your Auto Scaling Group, it will be named ${sid}-asg
+* Click on your Auto Scaling Group, it will be named ${your-sid}-asg
 * Scroll down and find the Outputs section.
 * Copy to the clipboard the value for the key named AutoScalingGroupName.
 
@@ -173,7 +180,7 @@ The easiest way to do this is from Service Catalog.
 * Click codedeploy
 * Click Launch Product
 * Enter a Provisioned Product Name
-   * ${sid}-code-deploy e.g. a123456-code-deploy
+   * ${your-sid}-code-deploy e.g. a123456-code-deploy
 * Select the latest Product Version
 * Press Next
 * Enter Parameters below
@@ -231,6 +238,7 @@ AWS Code Deploy requires a deployment descriptor named appsepc.yaml that describ
 the deployment lifecycle.
 
 In the appspec directory, create a file named appspec.yml and copy the contents below.
+Remember this is a YAML file, be careful about indentation!
 ```
 version: 0.0
 os: linux
@@ -291,7 +299,7 @@ Code Deploy requires that application binaries, scripts and deployment descripto
 in either a tarball or a zip file. We'll use the Maven Assembly plugin to create a zip file.
 
 You'll need to edit pom.xml in the root of your application. Add the maven-assembly-plugin to the 
-plugins section as in the example below.
+plugins section as in the example below. The spring-boot-maven plugin will already be defined.
 ##### POM.XML
 ```
     <build>
@@ -373,18 +381,14 @@ Create a file called zip.xml in assembly folder and copy the contents below.
 ```
 
 ### Deploy
-First thing we need to do is build the application and zip file.
+Next we need to do is build the application and zip file.
 Open a Command or Terminal window, change to the directory that contains your application.
 Hint - it has pom.xml in it.
 Type the following command
 ```
 mvn install
 ```
-If you have been successful, a file named ${sid}-aws-basics.zip will be created in the target folder.
-
-#### Login to AWS Console
-TODO
-[https://console.aws.amazon.com](https://console.aws.amazon.com)
+If you have been successful, a file named ${your-sid}-aws-basics.zip will be created in the target folder.
 
 #### Copy zip file to S3
 We will now upload the zip file to the code S3 bucket.
@@ -396,7 +400,7 @@ We will now upload the zip file to the code S3 bucket.
    * 00001 represents your Seal Id
 * Click Upload
 * Click Add Files
-* Navigate to the zip file target/${sid}-aws-basics.zip and press Open
+* Navigate to the zip file target/${you-sid}-aws-basics.zip and press Open
 * Press Next
 * Press Next
 * Under Encryption select Amazon S3 Master Key
@@ -410,7 +414,7 @@ Your zip file should now be in the /00001 S3 folder.
 #### Create a Deployment
 
 Quick recap.
-* Made the Spring Boot application ready for Code Deploy
+* Created a Spring Boot application ready for Code Deploy
 * Provisioned an Auto Scaling Group
 * Provisioned Code Deploy Application and Deployment Group
 * Copied zip file to S3.
@@ -433,7 +437,7 @@ It is recommended that you paste these values into a temporary text document.
 ##### Get Name of CodeDeploy Application
 * In the AWS Console, select Services, Service Catalog
 * Select Provisioned products list 
-* Click on your CodeDeploy, it will be named ${SID}-code-deploy
+* Click on your CodeDeploy, it will be named ${your-sid}-code-deploy
 * Scroll down and find the Outputs section.
 * Make a note of the value of the key named Application.
 
@@ -468,7 +472,7 @@ In order to test our deployment, we need to get the URL of the Load Balancer.
 
 * In the AWS Console, select Services, Service Catalog
 * Select Provisioned products list 
-* Click on your Auto Scaling Group, it will be named ${SID}-asg
+* Click on your Auto Scaling Group, it will be named ${your-sid}-asg
 * Scroll down and find the Outputs section.
 * Copy the value of the URL key to the clipboard.
 
