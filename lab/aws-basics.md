@@ -122,8 +122,9 @@ Ensure you are in the N. Virginia Region (US_East-1)
 
 * In the AWS Console, select Services, Service Catalog
 * Click on Products List in the tool bar on the left
-* Click auto_scaling
-* Click Launch Product
+   * To display the toolbar, click on the 3 horizontal lines on the top left of the screen 
+* Click auto_scaling Product Name
+* Click Launch Product Button
 * Enter a Provisioned Product Name
    * ${your-sid}-asg e.g. a123456-asg
 * Select the latest Product Version
@@ -394,7 +395,7 @@ If you have been successful, a file named ${your-sid}-aws-basics.zip will be cre
 We will now upload the zip file to the code S3 bucket.
  
 * In the AWS Console, Select Services, S3
-* Click on the apollo-fcn-cd-code-uu-id- bucket
+* Click on the bucket whose name starts with apollo-fcn-cd-code-uu-id-
    * Note the actual bucket name will have a random number appended to its name
 * Click on the 00001 folder 
    * 00001 represents your Seal Id
@@ -501,14 +502,43 @@ Ignore the error and you should see a response similar to below.
 
 ### SSH onto EC2 (optional)
 
-Download ssh key-pair from S3.  
-Copy to ~/.ssh  
-Set permissions  
+#### Get EC2 IP Address
+* In the AWS Console, select Services, Service Catalog
+* Select Provisioned products list 
+* Click on your Auto Scaling Group, it will be named ${your-sid}-asg
+* In the Outputs section locate the key named CloudformationStackARN
+* The value of the is a link, click on it
+   * You'll now be navigated to the CloudFormation Stack that Service Catalog created
+* Expand the Resources section
+* Locate the resource with a Logical ID of AutoScalingGroup
+* The Physical ID for this resource is a link, click on it
+   * This will take you to the Auto Scaling Group Details
+* Click on the Instances tab at the bottom of the screen
+   * The EC2 instances in the ASG will be listed 
+* The Instance ID for an instance is a link, click it
+   * Details of the EC2 instance will now be displayed
+* Find the IPv4 Public IP property at the bottom of the screen and copy the IP Address
 
+
+
+#### Download ssh key-pair from S3.  
+* In the AWS Console, Select Services, S3
+* Click on Bucket whose name starts with apollo-fcn-cd-code-uu-id-
+* Click on Folder named 00001 (this represents your seal id)
+* Click on aws-basics-lab-key-pair.pem
+* Click download 
+   * On a Mac or Linux download to ~/.ssh
+
+#### Windows Only - Install Putty
+
+#### Windows Only - Convert PEM to PPK
+
+#### Mac Only 
+Set permissions on the key
 ```
 chmod 600 ~/.ssh/aws-basic-lab-key-pair.pem
 ```
-
+SSH onto EC2
 ```
 ssh -i ~/.ssh/aws-basic-lab-key-pair.pem ec2-user@${ec2-ip-address}
 ```
