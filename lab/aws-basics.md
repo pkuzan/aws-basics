@@ -150,7 +150,7 @@ Auto Scaling Group is Service Catalog Product that creates an Auto Scaling Group
 | InstanceCount | 1 |
 | HealthCheckEndpoint | / |
 | SSLCertificateArn | arn:aws:iam::${your-account-id}:server-certificate/EJBSelfSignedCert|
-| Subnetids | TODO |
+| Subnetids | Select a single subnet with an IP range starting with 10.0  |
 | CPULow | 35 |
 | CPUHigh | 80 |
 | EnableStickySessions | False |
