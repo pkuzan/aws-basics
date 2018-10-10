@@ -211,7 +211,7 @@ The easiest way to do this is from Service Catalog.
 ### Setup Application for Code Deploy
 Your application needs to be enhanced in order for it to be deployable with Code Deploy.
 
-Create the following directories inside of your application.
+Create the following directories inside of your application - src/main will already exist.
 * src/main/code-deploy
 * src/main/code-depoly/scripts
 * src/main/code-depoly/appspec
