@@ -50,7 +50,7 @@ Insert the URL below into your browser
 http://localhost:8080/actuator/health
 ```
 If the applications has started successfully you should see the following response.
-```
+```json
 {"status":"UP"}
 ```
 
@@ -64,7 +64,7 @@ application to use the certificate and port 443.
 Edit the application.properties file in the src/main/resources directory.
 Add the following text.
 
-```
+```properties
 server.port=443
 server.ssl.key-alias=selfsigned
 server.ssl.key-password=password
@@ -398,13 +398,13 @@ If you have been successful, a file named ${your-sid}-aws-basics.zip will be cre
 We will now upload the zip file to the code S3 bucket.
  
 * In the AWS Console, Select Services, S3
-* Click on the bucket whose name starts with apollo-fcn-cd-code-uu-id-
+* Click on the bucket whose name starts with `apollo-fcn-cd-code-uu-id-`
    * Note the actual bucket name will have a random number appended to its name
 * Click on the 00001 folder 
    * 00001 represents your Seal Id
 * Click Upload
 * Click Add Files
-* Navigate to the zip file target/${your-sid}-aws-basics.zip and press Open
+* Navigate to the zip file `target/${your-sid}-aws-basics.zip` and press Open
 * Press Next
 * Press Next
 * Under Encryption select Amazon S3 Master Key
@@ -415,7 +415,7 @@ We will now upload the zip file to the code S3 bucket.
 Your zip file should now be in the /00001 S3 folder.
  
 
-#### Create a Deployment
+#### Create a CodeDeploy Deployment
 
 Quick recap.
 * Created a Spring Boot application ready for Code Deploy
@@ -483,7 +483,7 @@ In order to test our deployment, we need to get the URL of the Load Balancer.
 In your browser paste the URL. You will be presented with the same SSL certificate warning as before.  
 Ignore the error and you should see a response similar to below.
 
-```
+```json
 {
   "_links" : {
     "profile" : {
@@ -526,7 +526,7 @@ As above, Service Catalog will be used to increase the size of the EC2 instances
 TODO Check the size in ASG
 
 ### Create Rest Endpoint and Redeploy (optional) Needs Work
-Create a file named EchoController.java in src/main/java/com/example/${your-sid}awsbasics, the directory should 
+Create a file named `EchoController.java` in `src/main/java/com/example/${your-sid}awsbasics`, the directory should 
 already exist.  
 Copy the contents into the newly created file. Make sure you enter your SID in the package name.
 
