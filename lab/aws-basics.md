@@ -243,7 +243,7 @@ the deployment lifecycle.
 
 In the appspec directory, create a file named appspec.yml and copy the contents below.
 Remember this is a YAML file, be careful about indentation!
-```
+```yaml
 version: 0.0
 os: linux
 files:
@@ -305,7 +305,7 @@ in either a tarball or a zip file. We'll use the Maven Assembly plugin to create
 You'll need to edit pom.xml in the root of your application. Add the maven-assembly-plugin to the 
 plugins section as in the example below. The spring-boot-maven plugin will already be defined.
 ##### POM.XML
-```
+```xml
     <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>
@@ -347,7 +347,7 @@ This file configures the assembly plugin to :-
 
 Create a file called zip.xml in assembly folder and copy the contents below.
 
-```
+```xml
 <assembly xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3"
           xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3 http://maven.apache.org/xsd/assembly-1.1.3.xsd">
@@ -530,7 +530,7 @@ Create a file named EchoController.java in src/main/java/com/example/${your-sid}
 already exist.  
 Copy the contents into the newly created file. Make sure you enter your SID in the package name.
 
-```
+```java
 package com.example.${your-sid}awsbasics;
 
 import org.springframework.web.bind.annotation.GetMapping;
