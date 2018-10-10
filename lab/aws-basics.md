@@ -96,6 +96,11 @@ Enter `yes` at the `[no]:` prompt and press enter, a file named keystore.jks wil
 As before, build and start the application, remembering to change directory back to the application root - hint: it has `pom.xml` in it.
 
 ```
+# Mac / Linux
+cd ../../..
+# Windows
+cd ..\..\..
+
 mvn package
 java -jar target/${sid}-aws-basics-0.0.1-SNAPSHOT.jar
 ```
@@ -131,7 +136,7 @@ Auto Scaling Group is Service Catalog Product that creates an Auto Scaling Group
 * Enter a Provisioned Product Name
    * `${your-sid}-asg e.g. a123456-asg`
 * Select the latest Product Version
-* Press Next
+* Press `NEXT`
 * Enter Parameters below
   * Remember to substitute your account id in the `SSLCertificateArn` parameter value
 
