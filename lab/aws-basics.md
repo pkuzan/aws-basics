@@ -60,7 +60,7 @@ Stop the application by pressing CTRL + C in the Terminal / Command window.
 Connected Public Cloud accounts only permit https on port 443. To enable this, we need to generate a self-signed certificate and configure the 
 application to use the certificate and port 443.
 
-##### application.properties
+##### Edit application.properties
 Edit the application.properties file in the src/main/resources directory.
 Add the following text.
 
