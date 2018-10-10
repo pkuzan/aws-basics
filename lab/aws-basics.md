@@ -125,6 +125,7 @@ Auto Scaling Group is Service Catalog Product that creates an Auto Scaling Group
 * In the AWS Console, select Services, Service Catalog
 * Click on Products List in the tool bar on the left
    * To display the toolbar, click on the 3 horizontal lines on the top left of the screen 
+   * ![](images/service-catalog-products.png?raw=true)
 * Click auto_scaling Product Name
 * Click Launch Product Button
 * Enter a Provisioned Product Name
