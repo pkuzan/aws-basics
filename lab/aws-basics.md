@@ -170,6 +170,10 @@ Auto Scaling Group is Service Catalog Product that creates an Auto Scaling Group
 * Leave notifications unchecked and press `NEXT`
 * Review the parameters and press `LAUNCH`
 
+Your product launch will be complete once its status changes to Succeeded.  
+The page can be refreshed by pressing the button labeled with 2 orange arrows.
+![](images/refresh.png?raw=true)
+
 ### Launch Code Deploy Application and Deployment Group
 Code Deploy needs to be configured to know what Auto Scaling Group to deploy to.
 As above, we will launch a Service Catalog product. However, before we proceed, we need to 
