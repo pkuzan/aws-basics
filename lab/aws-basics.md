@@ -75,7 +75,7 @@ server.ssl.key-store-type=JKS
 
 ##### Generate self-signed SSL Certificate
 
-Open a Command or Terminal window, change directory to src/main/resources and enter the following command.
+Open a Command or Terminal window, change directory to `src/main/resources` and enter the following command.
 ```
 keytool -genkey -alias selfsigned -keyalg RSA -keysize 2048 -validity 700 -keypass password -storepass password -keystore keystore.jks
 ```
@@ -90,7 +90,7 @@ You will be asked the following questions :
 |What is the name of your State or Province?|**your state or province**|
 |What is the two-letter country code for this unit?|**your country code**|
 
-Enter yes when prompted and a file named keystore.jks will be created.
+Enter `yes` at the `[no]:` prompt and press enter, a file named keystore.jks will be created.
 
 ##### Start the Application
 As before, build and start the application.
