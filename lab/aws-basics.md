@@ -411,15 +411,15 @@ We will now upload the zip file to the code S3 bucket.
    * Note the actual bucket name will have a random number appended to its name
 * Click on the 00001 folder 
    * 00001 represents your Seal Id
-* Click Upload
-* Click Add Files
+* Click `Upload`
+* Click `Add Files`
 * Navigate to the zip file `target/${your-sid}-aws-basics.zip` and press Open
-* Press Next
-* Press Next
+* Press `Next`
+* Press `Next`
 * Under Encryption select Amazon S3 Master Key
    * Server side encryption is mandatory - this selects the key to use
-* Press Next
-* Press Upload
+* Press `Next`
+* Press `Upload`
 
 Your zip file should now be in the /00001 S3 folder.
  
@@ -457,8 +457,8 @@ It is recommended that you paste these values into a temporary text document.
 ##### Create Deployment
 * In the AWS Console, select Services, CodeDeploy
 * Paste your application name in the search text box and select it.
-* Select your Deployment Group radio button - there should only be one. 
-* Press the down-arrow on Actions button and select Deploy new revision.
+* In the Deployment groups section, select your Deployment Group radio button - there should only be one. 
+* Press the down-arrow on Actions button and select Deploy new revision. ![](images/deploy-new-revision.png?raw=true)
 * Add the following parameters:
 
 |Parameter | Value |
@@ -474,7 +474,7 @@ It is recommended that you paste these values into a temporary text document.
 | Deployment configuration | CodeDeployDefault.OneAtATime |
 
 * Leave all other settings default.
-* Press the Deploy button.
+* Press the `Deploy` button.
 
 For more information click on the Deployment ID link.  
 All being well you should see a green Deployment Succeeded message.
