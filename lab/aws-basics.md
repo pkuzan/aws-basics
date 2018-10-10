@@ -126,14 +126,14 @@ Auto Scaling Group is Service Catalog Product that creates an Auto Scaling Group
 * Click on Products List in the tool bar on the left
    * To display the toolbar, click on the 3 horizontal lines on the top left of the screen 
    * ![](images/service-catalog-products.png?raw=true)
-* Click auto_scaling Product Name
-* Click Launch Product Button
+* Click `auto_scaling` Product Name
+* Click `Launch Product` Button
 * Enter a Provisioned Product Name
-   * ${your-sid}-asg e.g. a123456-asg
+   * `${your-sid}-asg e.g. a123456-asg`
 * Select the latest Product Version
 * Press Next
 * Enter Parameters below
-  * Remember to substitute your account id in the SSLCertificateArn parameter value
+  * Remember to substitute your account id in the `SSLCertificateArn` parameter value
 
 |Parameter | Value |
 | --- | --- |
@@ -160,10 +160,10 @@ Auto Scaling Group is Service Catalog Product that creates an Auto Scaling Group
 | InstanceVolumeSize | 10 |
 | UserData | leave blank |
 
-* Then press next
-* Confirm the Tag Options by pressing next
-* Leave notifications unchecked and press next
-* Review the parameters and press launch
+* Then press `NEXT`
+* Confirm the Tag Options by pressing `NEXT`
+* Leave notifications unchecked and press `NEXT`
+* Review the parameters and press `LAUNCH`
 
 ### Launch Code Deploy Application and Deployment Group
 Code Deploy needs to be configured to know what Auto Scaling Group to deploy to.
@@ -175,19 +175,19 @@ The easiest way to do this is from Service Catalog.
 
 * In the AWS Console, select Services, Service Catalog
 * Select Provisioned products list 
-* Click on your Auto Scaling Group, it will be named ${your-sid}-asg
+* Click on your Auto Scaling Group, it will be named `${your-sid}-asg`
 * Scroll down and find the Outputs section.
-* Copy to the clipboard the value for the key named AutoScalingGroupName.
+* Copy to the clipboard the value for the key named `AutoScalingGroupName`.
 
 #### Launch Product
 * In the AWS Console, select Services, Service Catalog
 * Click on Products List in the tool bar on the left
-* Click codedeploy
-* Click Launch Product
+* Click on the `codedeploy` Product
+* Click `Launch Product`
 * Enter a Provisioned Product Name
    * ${your-sid}-code-deploy e.g. a123456-code-deploy
 * Select the latest Product Version
-* Press Next
+* Press `NEXT`
 * Enter Parameters below
 
 |Parameter | Value |
@@ -197,15 +197,14 @@ The easiest way to do this is from Service Catalog.
 | CustomResourceMetadata |leave blank |
 | DeploymentConfig | OneAtATime |
 
-* Then press next
-* Confirm the Tag Options by pressing next
-* Leave notifications unchecked and press next
-* Review the parameters and press launch
+* Then press `NEXT`
+* Confirm the Tag Options by pressing `NEXT`
+* Leave notifications unchecked and press `NEXT`
+* Review the parameters and press `LAUNCH`
 
 
 ### Setup Application for Code Deploy
 Your application needs to be enhanced in order for it to be deployable with Code Deploy.
-
 
 Create the following directories inside of your application.
 * src/main/code-deploy
@@ -239,10 +238,10 @@ aws-basics
 
 
 #### appspec.yml
-AWS Code Deploy requires a deployment descriptor named appsepc.yaml that describes
+AWS Code Deploy requires a deployment descriptor named `appsepc.yaml` that describes
 the deployment lifecycle.
 
-In the appspec directory, create a file named appspec.yml and copy the contents below.
+In the appspec directory, create a file named `appspec.yml` and copy the contents below.
 Remember this is a YAML file, be careful about indentation!
 ```yaml
 version: 0.0
@@ -386,7 +385,7 @@ Create a file called zip.xml in assembly folder and copy the contents below.
 ```
 
 ### Deploy
-Next we need to do is build the application and zip file.
+Next we need to build the application and zip file.
 Open a Command or Terminal window, change to the directory that contains your application.
 Hint - it has pom.xml in it.
 Type the following command
@@ -435,7 +434,7 @@ It is recommended that you paste these values into a temporary text document.
 * In the AWS Console, Select Services, S3
 * Click on Bucket whose name starts with apollo-fcn-cd-code-uu-id-
 * Click on Folder named 00001 (this represents your seal id)
-* To show versions, click on the Show button next to the Version label
+* To show versions, click on the `Show` button next to the Version label
 * Click on the latest version of your zip file - the one that starts with your SID.
 * Make a note of the Link at the bottom of the page
 
@@ -500,13 +499,13 @@ We will use Service Catalog to increase the number of running EC2 instances in o
 * In the AWS Console, select Services, Service Catalog
 * Select Provisioned products list 
 * Click on your Auto Scaling Group, it will be named ${your-sid}-asg
-* On the right of the screen click on the down-arrow on the ACTIONS button and select Update
+* On the right of the screen click on the down-arrow on the `ACTIONS` button and select Update
 * Select the latest Product Version
-* Press the NEXT button
-* Scroll down to the Scaling Configurations section and locate the InstanceCount parameter
+* Press the `NEXT` button
+* Scroll down to the Scaling Configurations section and locate the `InstanceCount` parameter
 * Change the value from 1 to 2
-* Then press the NEXT button
-* Then press UPDATE
+* Then press the `NEXT` button
+* Then press `UPDATE`
 
 TODO - Check the new instance in ASG and ELB instances in-service 
 
@@ -516,13 +515,13 @@ As above, Service Catalog will be used to increase the size of the EC2 instances
 * In the AWS Console, select Services, Service Catalog
 * Select Provisioned products list 
 * Click on your Auto Scaling Group, it will be named ${your-sid}-asg
-* On the right of the screen click on the down-arrow on the ACTIONS button and select Update
+* On the right of the screen click on the down-arrow on the `ACTIONS` button and select Update
 * Select the latest Product Version
-* Press the NEXT button
-* Scroll down to the  EC2 Instance Configuration section and locate the InstanceType parameter
+* Press the `NEXT` button
+* Scroll down to the  EC2 Instance Configuration section and locate the `InstanceType` parameter
 * Change the value from t2.micro to t2.small
-* Then press the NEXT button
-* Then press UPDATE
+* Then press the `NEXT` button
+* Then press `UPDATE`
 
 TODO Check the size in ASG
 
