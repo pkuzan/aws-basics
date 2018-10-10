@@ -93,7 +93,7 @@ You will be asked the following questions :
 Enter `yes` at the `[no]:` prompt and press enter, a file named keystore.jks will be created.
 
 ##### Start the Application
-As before, build and start the application.
+As before, build and start the application, remembering to change directory back to the application root - hint: it has `pom.xml` in it.
 
 ```
 mvn package
