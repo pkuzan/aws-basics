@@ -31,8 +31,9 @@ In the subsequent tasks, please substitute :
 * `${your-account-id}` with your AWS Account ID 
 
 ### Intro to Lab
-The Session will provide attendees with the opportunity to get hands on experience of creating and using Apollo AWS Services by leveraging pre-created Service catalog products to create your infrastructure and configure your application to be runnable on Apollo AWS and then deploy. 
-
+In this lab attendees will gain hands on experience in provisioning and maintaining Apollo AWS resources by leveraging pre-created Service Catalog products 
+and creating an AWS deployable Spring Boot application. 
+ 
 ### Generate Spring Boot Application.
 In your browser, navigate to [https://start.spring.io/](https://start.spring.io/)
 Change the artifact name to `${your-username}-aws-basics` and add Actuator and Rest Repositories dependencies.
