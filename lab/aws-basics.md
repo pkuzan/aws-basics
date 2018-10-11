@@ -447,7 +447,7 @@ It is recommended that you paste these values into a temporary text document.
 * Click on Bucket whose name starts with apollo-fcn-cd-code-uu-id-
 * Click on Folder named 00001 (this represents your seal id)
 * To show versions, click on the `Show` button next to the Version label
-* Click on the latest version of your zip file - the one that starts with your SID.
+* Click on the latest version of your zip file - the one that starts with your username.
 * Make a note of the Link at the bottom of the page
 
 ##### Get Name of CodeDeploy Application
@@ -540,7 +540,8 @@ TODO Check the size in ASG
 ### Create Rest Endpoint and Redeploy (optional) Needs Work
 Create a file named `EchoController.java` in `src/main/java/com/example/${your-username}awsbasics`, the directory should 
 already exist.  
-Copy the contents into the newly created file. Make sure you enter your SID in the package name.
+Copy the contents into the newly created file. Make sure you enter your username in the package name.
+E.g. `com.example.user5awsbasics`.
 
 ```java
 package com.example.${your-username}awsbasics;
