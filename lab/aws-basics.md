@@ -510,7 +510,7 @@ Ignore the warning and you should see a response similar to below.
 We will use Service Catalog to increase the number of running EC2 instances in our Auto Scaling Group.
 * In the AWS Console, select Services, Service Catalog
 * Select Provisioned products list 
-* Click on your Auto Scaling Group, it will be named ${your-username}-asg
+* Click on your Auto Scaling Group, it will be named `${your-username}-asg`
 * On the right of the screen click on the down-arrow on the `ACTIONS` button and select Update
 * Select the latest Product Version
 * Press the `NEXT` button
@@ -519,7 +519,20 @@ We will use Service Catalog to increase the number of running EC2 instances in o
 * Then press the `NEXT` button
 * Then press `UPDATE`
 
-TODO - Check the new instance in ASG and ELB instances in-service 
+To validate that scale-up has occurred, we'll look at the load balancer, we should see 2 in-service instances.  
+It will take a couple of minutes for the EC2 instance to spin-up and for the load balancer health-check to put it in-service.
+* In the AWS Console, select Services, Service Catalog
+* Select Provisioned products list 
+* Click on your Auto Scaling Group, it will be named `${your-username}-asg`
+* In the Outputs section locate the key named `CloudformationStackARN`
+* The value is a link, click on it
+   * You'll now be navigated to the CloudFormation Stack that Service Catalog created
+* Expand the Resources section
+* Find the resource with a Logical ID of `ElasticLoadBalancer`, the Physical ID will be a link, click it.
+* You'll be navigated to the Load Balancer screen
+* Click on the `Instances` tab and you should see 2 in-service instances.
+![](images/scale-up.png?raw=true)
+
 
 ### Scale Vertically
 #### Increase EC2 Instance Type
@@ -535,7 +548,11 @@ As above, Service Catalog will be used to increase the size of the EC2 instances
 * Then press the `NEXT` button
 * Then press `UPDATE`
 
-TODO Check the size in ASG
+To validate that the EC2 instance type has changed, 
+* Navigate to the Load Balancer screen as in the above task 
+* Click on the `Instances` tab
+* Click on one of the `Instance ID`s
+* Scroll-down and you should see that the `instance type` is now `t2.small`
 
 ### Create Rest Endpoint and Redeploy (optional) Needs Work
 Create a file named `EchoController.java` in `src/main/java/com/example/${your-username}awsbasics`, the directory should 
