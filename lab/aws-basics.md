@@ -218,11 +218,11 @@ The easiest way to do this is from Service Catalog.
 ### Setup Application for Code Deploy
 Your application needs to be enhanced in order for it to be deployable with Code Deploy.
 
-Create the following directories inside of your application - src/main will already exist.
+Create the following directories inside of your application - `src/main` will already exist.
 * src/main/code-deploy
-* src/main/code-depoly/scripts
-* src/main/code-depoly/appspec
-* src/main/code-depoly/assembly
+* src/main/code-deploy/scripts
+* src/main/code-deploy/appspec
+* src/main/code-deploy/assembly
 
 At the end of this task, you'll end up with a directory structure like this.
 
@@ -492,8 +492,8 @@ In order to test our deployment, we need to get the URL of the Load Balancer.
 * Scroll down and find the Outputs section.
 * Copy the value of the URL key to the clipboard.
 
-In your browser paste the URL. You will be presented with the same SSL certificate warning as before.  
-Ignore the error and you should see a response similar to below.
+In your browser paste the load balancer URL. You will be presented with the same SSL certificate warning as before.  
+Ignore the warning and you should see a response similar to below.
 
 ```json
 {
@@ -522,7 +522,7 @@ We will use Service Catalog to increase the number of running EC2 instances in o
 TODO - Check the new instance in ASG and ELB instances in-service 
 
 ### Scale Vertically
-#### Increase EC2 Instance Size
+#### Increase EC2 Instance Type
 As above, Service Catalog will be used to increase the size of the EC2 instances in our Auto Scaling Group.
 * In the AWS Console, select Services, Service Catalog
 * Select Provisioned products list 
