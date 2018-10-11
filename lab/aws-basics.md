@@ -31,7 +31,7 @@ In the subsequent tasks, please substitute :
 * `${your-account-id}` with your AWS Account ID 
 
 ### Intro to Lab
-AWS blah blah
+The Session will provide attendees with the opportunity to get hands on experience of creating and using Apollo AWS Services by leveraging pre-created Service catalog products to create your infrastructure and configure your application to be runnable on Apollo AWS and then deploy. 
 
 ### Generate Spring Boot Application.
 In your browser, navigate to [https://start.spring.io/](https://start.spring.io/)
