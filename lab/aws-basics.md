@@ -37,7 +37,7 @@ AWS blah blah
 In your browser, navigate to [https://start.spring.io/](https://start.spring.io/)
 Change the artifact name to `${your-username}-aws-basics` and add Actuator and Rest Repositories dependencies.
 Press the Generate Project button and a zip file named `${your-username}-aws-basics.zip` will be downloaded.
-![](images/initializr-create.png?raw=true)
+![](images/initializr.png?raw=true)
 
 Unzip the `${your-username}-aws-basics.zip` file.
 Open a Command or Terminal
