@@ -15,6 +15,9 @@ Add to path TODO
 #### IDE (Optional)
 Download Intellij Community from [https://www.jetbrains.com/idea](https://www.jetbrains.com/idea)
 
+#### Browser
+It is recommended that either Chrome or Firefox are used for this lab.
+
 #### Credentials
 You will have been provided AWS authentication details.
 
@@ -24,7 +27,7 @@ You will have been provided AWS authentication details.
 
 #### Conventions
 In the subsequent tasks, please substitute :
-* ${your-sid} with your SID
+* ${your-username} with your username
 * ${your-account-id} with your AWS Account ID 
 
 ### Intro to Lab
@@ -32,17 +35,17 @@ AWS blah blah
 
 ### Generate Spring Boot Application.
 In your browser, navigate to [https://start.spring.io/](https://start.spring.io/)
-Change the artifact name to ${your-sid}-aws-basics and add Actuator and Rest Repositories dependencies.
-Press the Generate Project button and a zip file named ${sid}-aws-basics.zip will be downloaded.
+Change the artifact name to ${your-username}-aws-basics and add Actuator and Rest Repositories dependencies.
+Press the Generate Project button and a zip file named ${your-username}-aws-basics.zip will be downloaded.
 ![](images/initializr-create.png?raw=true)
 
-Unzip the ${your-sid}-aws-basics.zip file.
+Unzip the ${your-username}-aws-basics.zip file.
 Open a Command or Terminal
 Change directory to the directory where the zip file was unzipped.
 Execute the following commands.
 ```
 mvn package
-java -jar target/${your-sid}-aws-basics-0.0.1-SNAPSHOT.jar
+java -jar target/${your-username}-aws-basics-0.0.1-SNAPSHOT.jar
 ```
 
 Insert the URL below into your browser
@@ -102,13 +105,13 @@ cd ../../..
 cd ..\..\..
 
 mvn package
-java -jar target/${sid}-aws-basics-0.0.1-SNAPSHOT.jar
+java -jar target/${your-username}-aws-basics-0.0.1-SNAPSHOT.jar
 ```
 Note, if you are running a Mac or Linux, you may have to run the application with elevated privileges, as ports
 less than 1024 are restricted. 
 ```
 #Mac or Linux 
-sudo java -jar target/${your-sid}-aws-basics-0.0.1-SNAPSHOT.jar
+sudo java -jar target/${your-username}-aws-basics-0.0.1-SNAPSHOT.jar
 ```
 In your browser enter the following URL.
 ```
@@ -134,7 +137,7 @@ Auto Scaling Group is Service Catalog Product that creates an Auto Scaling Group
 * Click `auto_scaling` Product Name
 * Click `Launch Product` Button
 * Enter a Provisioned Product Name
-   * `${your-sid}-asg e.g. a123456-asg`
+   * `${your-username}-asg e.g. user5-asg`
 * Select the latest Product Version
 * Press `NEXT`
 * Enter Parameters below
@@ -184,7 +187,7 @@ The easiest way to do this is from Service Catalog.
 
 * In the AWS Console, select Services, Service Catalog
 * Select Provisioned products list 
-* Click on your Auto Scaling Group, it will be named `${your-sid}-asg`
+* Click on your Auto Scaling Group, it will be named `${your-username}-asg`
 * Scroll down and find the Outputs section.
 * Copy to the clipboard the value for the key named `AutoScalingGroupName`.
 
@@ -194,7 +197,7 @@ The easiest way to do this is from Service Catalog.
 * Click on the `codedeploy` Product
 * Click `Launch Product`
 * Enter a Provisioned Product Name
-   * ${your-sid}-code-deploy e.g. a123456-code-deploy
+   * ${your-username}-code-deploy e.g. user5-code-deploy
 * Select the latest Product Version
 * Press `NEXT`
 * Enter Parameters below
@@ -280,10 +283,10 @@ We are going to create 3 files in the scripts directory.
 
 ##### start_server.sh
 Warning, do not just copy an paste the script below, the name of the jar file will vary depending on your 
-sid.
+username.
 ```
 #!/bin/bash
-java -jar /opt/aws-basics/${your sid}-aws-basics.jar 2> /dev/null > /dev/null < /dev/null &
+java -jar /opt/aws-basics/${your-username}-aws-basics.jar 2> /dev/null > /dev/null < /dev/null &
 ```
 
 ##### stop_server.sh
@@ -299,11 +302,11 @@ fi
 
 ##### clean_up.sh
 Warning, do not just copy an paste the script below, the name of the jar file will vary depending on your 
-sid.
+username.
 ```
 #!/bin/bash
 
-if [ -f /opt/aws-basics/${your sid}-aws-basics.jar ]; then rm /opt/aws-basics/${your sid}-aws-basics.jar; fi
+if [ -f /opt/aws-basics/${your-username}-aws-basics.jar ]; then rm /opt/aws-basics/${your-username}-aws-basics.jar; fi
 
 ```
 
@@ -401,7 +404,7 @@ Type the following command
 ```
 mvn install
 ```
-If you have been successful, a file named ${your-sid}-aws-basics.zip will be created in the target folder.
+If you have been successful, a file named ${your-username}-aws-basics.zip will be created in the target folder.
 
 #### Copy zip file to S3
 We will now upload the zip file to the code S3 bucket.
@@ -413,7 +416,7 @@ We will now upload the zip file to the code S3 bucket.
    * 00001 represents your Seal Id
 * Click `Upload`
 * Click `Add Files`
-* Navigate to the zip file `target/${your-sid}-aws-basics.zip` and press Open
+* Navigate to the zip file `target/${your-username}-aws-basics.zip` and press Open
 * Press `Next`
 * Press `Next`
 * Under Encryption select Amazon S3 Master Key
@@ -450,7 +453,7 @@ It is recommended that you paste these values into a temporary text document.
 ##### Get Name of CodeDeploy Application
 * In the AWS Console, select Services, Service Catalog
 * Select Provisioned products list 
-* Click on your CodeDeploy, it will be named ${your-sid}-code-deploy
+* Click on your CodeDeploy, it will be named ${your-username}-code-deploy
 * Scroll down and find the Outputs section.
 * Make a note of the value of the key named Application.
 
@@ -485,7 +488,7 @@ In order to test our deployment, we need to get the URL of the Load Balancer.
 
 * In the AWS Console, select Services, Service Catalog
 * Select Provisioned products list 
-* Click on your Auto Scaling Group, it will be named ${your-sid}-asg
+* Click on your Auto Scaling Group, it will be named ${your-username}-asg
 * Scroll down and find the Outputs section.
 * Copy the value of the URL key to the clipboard.
 
@@ -507,7 +510,7 @@ Ignore the error and you should see a response similar to below.
 We will use Service Catalog to increase the number of running EC2 instances in our Auto Scaling Group.
 * In the AWS Console, select Services, Service Catalog
 * Select Provisioned products list 
-* Click on your Auto Scaling Group, it will be named ${your-sid}-asg
+* Click on your Auto Scaling Group, it will be named ${your-username}-asg
 * On the right of the screen click on the down-arrow on the `ACTIONS` button and select Update
 * Select the latest Product Version
 * Press the `NEXT` button
@@ -523,7 +526,7 @@ TODO - Check the new instance in ASG and ELB instances in-service
 As above, Service Catalog will be used to increase the size of the EC2 instances in our Auto Scaling Group.
 * In the AWS Console, select Services, Service Catalog
 * Select Provisioned products list 
-* Click on your Auto Scaling Group, it will be named ${your-sid}-asg
+* Click on your Auto Scaling Group, it will be named ${your-username}-asg
 * On the right of the screen click on the down-arrow on the `ACTIONS` button and select Update
 * Select the latest Product Version
 * Press the `NEXT` button
@@ -535,12 +538,12 @@ As above, Service Catalog will be used to increase the size of the EC2 instances
 TODO Check the size in ASG
 
 ### Create Rest Endpoint and Redeploy (optional) Needs Work
-Create a file named `EchoController.java` in `src/main/java/com/example/${your-sid}awsbasics`, the directory should 
+Create a file named `EchoController.java` in `src/main/java/com/example/${your-username}awsbasics`, the directory should 
 already exist.  
 Copy the contents into the newly created file. Make sure you enter your SID in the package name.
 
 ```java
-package com.example.${your-sid}awsbasics;
+package com.example.${your-username}awsbasics;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -579,7 +582,7 @@ hello
 #### Get EC2 IP Address
 * In the AWS Console, select Services, Service Catalog
 * Select Provisioned products list 
-* Click on your Auto Scaling Group, it will be named ${your-sid}-asg
+* Click on your Auto Scaling Group, it will be named ${your-username}-asg
 * In the Outputs section locate the key named CloudformationStackARN
 * The value is a link, click on it
    * You'll now be navigated to the CloudFormation Stack that Service Catalog created
