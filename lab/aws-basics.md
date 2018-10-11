@@ -419,33 +419,33 @@ We will now upload the zip file to the code S3 bucket.
 * Navigate to the zip file `target/${your-username}-aws-basics.zip` and press Open
 * Press `Next`
 * Press `Next`
-* Under Encryption select Amazon S3 Master Key
+* Under Encryption select `Amazon S3 Master Key`
    * Server side encryption is mandatory - this selects the key to use
 * Press `Next`
 * Press `Upload`
 
-Your zip file should now be in the /00001 S3 folder.
+Your zip file should now be in the `apollo-fcn-cd-code-uu-id-XXXXX/00001` S3 bucket.
  
 
 #### Create a CodeDeploy Deployment
 
 Quick recap.
-* Created a Spring Boot application ready for Code Deploy
+* We have created a Spring Boot application ready for Code Deploy
 * Provisioned an Auto Scaling Group
-* Provisioned Code Deploy Application and Deployment Group
+* Provisioned a Code Deploy Application and Deployment Group
 * Copied zip file to S3.
 
 The next task is to deploy the zip file to the EC2 instance(s) in the Auto Scaling Group.  
 To complete this task, you'll need 2 pieces of information :
-1. URL to you zip file in S3 
+1. URL of your zip file in S3 
 2. Name of you CodeDeploy Application.  
 
 It is recommended that you paste these values into a temporary text document. 
 
 ##### Get S3 URL of the CodeDeploy zip file 
 * In the AWS Console, Select Services, S3
-* Click on Bucket whose name starts with apollo-fcn-cd-code-uu-id-
-* Click on Folder named 00001 (this represents your seal id)
+* Click on Bucket whose name starts with `apollo-fcn-cd-code-uu-id-`
+* Click on Folder named `00001` (this represents your seal id)
 * To show versions, click on the `Show` button next to the Version label
 * Click on the latest version of your zip file - the one that starts with your username.
 * Make a note of the Link at the bottom of the page
@@ -460,7 +460,7 @@ It is recommended that you paste these values into a temporary text document.
 ##### Create Deployment
 * In the AWS Console, select Services, CodeDeploy
 * Paste your application name in the search text box and select it.
-* In the Deployment groups section, select your Deployment Group radio button - there should only be one. 
+* In the Deployment groups section, select your Deployment Group radio button - there should be only one. 
 * Press the down-arrow on Actions button and select Deploy new revision. ![](images/deploy-new-revision.png?raw=true)
 * Add the following parameters:
 
