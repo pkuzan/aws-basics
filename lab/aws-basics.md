@@ -599,7 +599,7 @@ hello
 #### Get EC2 IP Address
 * In the AWS Console, select Services, Service Catalog
 * Select Provisioned products list 
-* Click on your Auto Scaling Group, it will be named ${your-username}-asg
+* Click on your Auto Scaling Group, it will be named `${your-username}-asg`
 * In the Outputs section locate the key named CloudformationStackARN
 * The value is a link, click on it
    * You'll now be navigated to the CloudFormation Stack that Service Catalog created
@@ -611,13 +611,13 @@ hello
    * The EC2 instances in the ASG will be listed 
 * The Instance ID for an instance is a link, click it
    * Details of the EC2 instance will now be displayed
-* Find the IPv4 Public IP property at the bottom of the screen and copy the IP Address
+* Find the `IPv4 Public IP` property at the bottom of the screen and copy the IP Address
 
 #### Download ssh key-pair from S3.  
 * In the AWS Console, Select Services, S3
-* Click on Bucket whose name starts with apollo-fcn-cd-code-uu-id-
-* Click on Folder named 00001
-* Click on aws-basics-lab-key-pair.pem
+* Click on Bucket whose name starts with `apollo-fcn-cd-code-uu-id-`
+* Click on Folder named `00001`
+* Click on `aws-basics-lab-key-pair.pem`
 * Click download 
    * On a Mac or Linux download to ~/.ssh
 
@@ -627,7 +627,7 @@ Download from [https://www.putty.org//](https://www.putty.org/)
 TODO - Someone with a Windows machine!
 
 ##### Convert PEM to PPK
-TODO - Someone with a Windows machine!
+TODO - Someone with a Windows machine or have the PPK already converted in S3
 * Open PEM in Putty
 * Export as PPK 
 
