@@ -27,19 +27,19 @@ You will have been provided AWS authentication details.
 
 #### Conventions
 In the subsequent tasks, please substitute :
-* ${your-username} with your username
-* ${your-account-id} with your AWS Account ID 
+* `${your-username}` with your username
+* `${your-account-id}` with your AWS Account ID 
 
 ### Intro to Lab
 AWS blah blah
 
 ### Generate Spring Boot Application.
 In your browser, navigate to [https://start.spring.io/](https://start.spring.io/)
-Change the artifact name to ${your-username}-aws-basics and add Actuator and Rest Repositories dependencies.
-Press the Generate Project button and a zip file named ${your-username}-aws-basics.zip will be downloaded.
+Change the artifact name to `${your-username}-aws-basics` and add Actuator and Rest Repositories dependencies.
+Press the Generate Project button and a zip file named `${your-username}-aws-basics.zip` will be downloaded.
 ![](images/initializr-create.png?raw=true)
 
-Unzip the ${your-username}-aws-basics.zip file.
+Unzip the `${your-username}-aws-basics.zip` file.
 Open a Command or Terminal
 Change directory to the directory where the zip file was unzipped.
 Execute the following commands.
