@@ -404,7 +404,7 @@ Type the following command
 ```
 mvn install
 ```
-If you have been successful, a file named ${your-username}-aws-basics.zip will be created in the target folder.
+If you have been successful, a file named `${your-username}-aws-basics.zip` will be created in the target folder.
 
 #### Copy zip file to S3
 We will now upload the zip file to the code S3 bucket.
@@ -413,7 +413,6 @@ We will now upload the zip file to the code S3 bucket.
 * Click on the bucket whose name starts with `apollo-fcn-cd-code-uu-id-`
    * Note the actual bucket name will have a random number appended to its name
 * Click on the 00001 folder 
-   * 00001 represents your Seal Id
 * Click `Upload`
 * Click `Add Files`
 * Navigate to the zip file `target/${your-username}-aws-basics.zip` and press Open
@@ -445,7 +444,7 @@ It is recommended that you paste these values into a temporary text document.
 ##### Get S3 URL of the CodeDeploy zip file 
 * In the AWS Console, Select Services, S3
 * Click on Bucket whose name starts with `apollo-fcn-cd-code-uu-id-`
-* Click on Folder named `00001` (this represents your seal id)
+* Click on Folder named `00001` 
 * To show versions, click on the `Show` button next to the Version label
 * Click on the latest version of your zip file - the one that starts with your username.
 * Make a note of the Link at the bottom of the page
@@ -617,7 +616,7 @@ hello
 #### Download ssh key-pair from S3.  
 * In the AWS Console, Select Services, S3
 * Click on Bucket whose name starts with apollo-fcn-cd-code-uu-id-
-* Click on Folder named 00001 (this represents your seal id)
+* Click on Folder named 00001
 * Click on aws-basics-lab-key-pair.pem
 * Click download 
    * On a Mac or Linux download to ~/.ssh
