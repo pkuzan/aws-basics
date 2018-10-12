@@ -128,7 +128,7 @@ The response should be as before.
 ### Launch Auto-Scaling Group
 Auto Scaling Group is Service Catalog Product that creates an Auto Scaling Group and Load Balancer.
 
-* Login to the AWS Console [https://console.aws.amazon.com](https://console.aws.amazon.com)  
+* Login to the [AWS Console](https://console.aws.amazon.com/iam/home?region=us-east-1)  
    * Ensure you are in the N. Virginia Region (US_East-1)
    * Use credentials you were given before the workshop
 * In the AWS Console, select Services, Service Catalog
