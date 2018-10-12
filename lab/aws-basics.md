@@ -251,7 +251,7 @@ aws-basics
 
 
 #### appspec.yml
-AWS Code Deploy requires a deployment descriptor named `appsepc.yaml` that describes
+AWS Code Deploy requires a deployment descriptor named `appsepc.yml` that describes
 the deployment lifecycle.
 
 In the appspec directory, create a file named `appspec.yml` and copy the contents below.
@@ -649,4 +649,5 @@ ssh -i ~/.ssh/aws-basic-lab-key-pair.pem ec2-user@${ec2-ip-address}
 /opt/codedeploy-agent/
 
 #### Enable Logging (Optional)
-TODO
+The skeleton application generated in the first task included the Actuator and Rest starters.
+These starters depend on spring-boot-starter-logging so there is very little work required to enable logging.
