@@ -621,7 +621,7 @@ hello
 * Click on `aws-basics-lab-key-pair.pem`
 * Click download 
    * On a Mac or Linux download to ~/.ssh
-   * A Mac may rename the file to as it downloads to`aws-basics-lab-key-pair.cer`. You can leave is as .cer or rename it .pem.
+   * A Mac may rename the file to as it downloads to`aws-basics-lab-key-pair.cer`, rename it back to .pem.
 
 #### Windows Only 
 #####  Install Putty
