@@ -534,7 +534,7 @@ It will take a couple of minutes for the EC2 instance to spin-up and for the loa
 ![](images/scale-up.png?raw=true)
 
 
-### Scale Vertically
+### Scale Vertically (Needs Works - permission issue - replace with another task as essentially the same as above)
 #### Increase EC2 Instance Type
 As above, Service Catalog will be used to increase the size of the EC2 instances in our Auto Scaling Group.
 * In the AWS Console, select Services, Service Catalog
@@ -625,7 +625,7 @@ hello
 
 #### Windows Only 
 #####  Install Putty
-Download from [https://www.putty.org//](https://www.putty.org/)  
+Download from [https://www.putty.org/](https://www.putty.org/)  
 TODO - Someone with a Windows machine!
 
 ##### Convert PEM to PPK
