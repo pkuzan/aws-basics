@@ -459,6 +459,7 @@ It is recommended that you paste these values into a temporary text document.
 
 ##### Create Deployment
 * In the AWS Console, select Services, CodeDeploy
+   * Warning, the CodeDeploy web page has been updated. To follow the instructions below, click on `Return to old experience` 
 * Paste your application name in the search text box and select it.
 * In the Deployment groups section, select your Deployment Group radio button - there should be only one. 
 * Press the down-arrow on Actions button and select Deploy new revision. ![](images/deploy-new-revision.png?raw=true)
@@ -648,11 +649,11 @@ and press the `Open` button.
 #### Mac / Linux Only 
 ##### Set permissions on the key
 ```
-chmod 600 ~/.ssh/aws-basic-lab-key-pair.pem
+chmod 600 ~/.ssh/aws-basics-lab-key-pair.pem
 ```
 ##### SSH onto EC2
 Open a Terminal and enter the following:  
-`ssh -i ~/.ssh/aws-basic-lab-key-pair.pem ec2-user@${EC2 IPv4 Public IP}`   
+`ssh -i ~/.ssh/aws-basics-lab-key-pair.pem ec2-user@${EC2 IPv4 Public IP}`   
 (substitute with the IP address of your EC2 instance)
 
 #### Useful Directories
@@ -669,7 +670,7 @@ Add the following text, remembering to substitute your user id.
 
 ```properties
 logging.level.org.springframework=DEBUG
-logging.level.om.example.${your-username}awsbasics=DEBUG
+logging.level.com.example.${your-username}awsbasics=DEBUG
 ```
 This will enable very verbose logging for the Spring framework and your application.
 
