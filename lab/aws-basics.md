@@ -684,5 +684,21 @@ Add the following as the first line in the main method.
 
 ```java
 LOG.debug("Application Starting");
- ```
+```
+Run the application locally as in the task above and observe the logging.
+ 
 ##### Configure a File Appender
+By default, all logging goes to the console which is useful when the application is 
+run locally, however is not much use when running in the Cloud.
+
+Add the following line to application.properties in the src/main/resources directory.
+```properties
+logging.file=/var/log/aws-basics/application.log
+```
+Rebuild your application and re-deploy as in the steps above.
+SSH onto an EC2 instance.
+
+```
+cd /var/log/aws-basics
+less application.log 
+```
