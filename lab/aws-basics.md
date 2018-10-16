@@ -634,7 +634,15 @@ TODO - Someone with a Windows machine or have the PPK already converted in S3
 * Export as PPK 
 
 ##### Connect Using Putty
-TODO - Someone with a Windows machine!
+Open Putty
+In the `Host Name (or IP Address)` text box enter:  
+`ec2-user@${EC2 IPv4 Public IP}` (substitute the IP address of your EC2 instance)
+![](images/putty-1.png?raw=true)
+
+Then click on Connection, SSH, Auth and enter the path to the PPK you created in the step above.
+and press the `Open` button.  
+
+![](images/putty-2.png?raw=true)  
 
 #### Mac / Linux Only 
 ##### Set permissions on the key
@@ -643,7 +651,7 @@ chmod 600 ~/.ssh/aws-basic-lab-key-pair.pem
 ```
 ##### SSH onto EC2
 ```
-ssh -i ~/.ssh/aws-basic-lab-key-pair.pem ec2-user@${ec2-ip-address}
+ssh -i ~/.ssh/aws-basic-lab-key-pair.pem ec2-user@${EC2 IPv4 Public IP} (substitute the IP address of your EC2 instance)
 ```
 #### Useful Directories
 
@@ -651,4 +659,4 @@ ssh -i ~/.ssh/aws-basic-lab-key-pair.pem ec2-user@${ec2-ip-address}
 
 #### Enable Logging (Optional)
 The skeleton application generated in the first task included the Actuator and Rest starters.
-These starters depend on spring-boot-starter-logging so there is very little work required to enable logging.
+These starters depend on `spring-boot-starter-logging` so there is very little work required to enable logging.
