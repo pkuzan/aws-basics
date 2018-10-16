@@ -674,6 +674,15 @@ logging.level.om.example.${your-username}awsbasics=DEBUG
 This will enable very verbose logging for the Spring framework and your application.
 
 ##### Add some logging to your application
+Add the following declaration to the `${your-username}AwsBasicsApplication` class.
+ 
+```java
+private static final Logger LOG = LoggerFactory.getLogger(${your-username}AwsBasicsApplication.class);
+```
 
+Add the following as the first line in the main method.
 
+```java
+LOG.debug("Application Starting");
+ ```
 ##### Configure a File Appender
