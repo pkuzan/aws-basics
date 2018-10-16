@@ -636,7 +636,8 @@ TODO - Someone with a Windows machine or have the PPK already converted in S3
 ##### Connect Using Putty
 Open Putty
 In the `Host Name (or IP Address)` text box enter:  
-`ec2-user@${EC2 IPv4 Public IP}` (substitute the IP address of your EC2 instance)
+`ec2-user@${EC2 IPv4 Public IP}`   
+(substitute with the IP address of your EC2 instance)  
 ![](images/putty-1.png?raw=true)
 
 Then click on Connection, SSH, Auth and enter the path to the PPK you created in the step above.
@@ -650,9 +651,10 @@ and press the `Open` button.
 chmod 600 ~/.ssh/aws-basic-lab-key-pair.pem
 ```
 ##### SSH onto EC2
-```
-ssh -i ~/.ssh/aws-basic-lab-key-pair.pem ec2-user@${EC2 IPv4 Public IP} (substitute the IP address of your EC2 instance)
-```
+Open a Terminal and enter the following:  
+`ssh -i ~/.ssh/aws-basic-lab-key-pair.pem ec2-user@${EC2 IPv4 Public IP}`   
+(substitute with the IP address of your EC2 instance)
+
 #### Useful Directories
 
 /opt/codedeploy-agent/
