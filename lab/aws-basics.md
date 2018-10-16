@@ -413,7 +413,7 @@ We will now upload the zip file to the code S3 bucket.
 * In the AWS Console, Select Services, S3
 * Click on the bucket whose name starts with `apollo-fcn-cd-code-uu-id-`
    * Note the actual bucket name will have a random number appended to its name
-* Click on the 00001 folder 
+* Click on the `00001` folder 
 * Click `Upload`
 * Click `Add Files`
 * Navigate to the zip file `target/${your-username}-aws-basics.zip` and press Open
@@ -432,7 +432,7 @@ Your zip file should now be in the `apollo-fcn-cd-code-uu-id-XXXXX/00001` S3 buc
 Quick recap.
 * We have created a Spring Boot application ready for Code Deploy
 * Provisioned an Auto Scaling Group
-* Provisioned a Code Deploy Application and Deployment Group
+* Provisioned a CodeDeploy Application and Deployment Group
 * Copied zip file to S3.
 
 The next task is to deploy the zip file to the EC2 instance(s) in the Auto Scaling Group.  
@@ -662,3 +662,18 @@ Open a Terminal and enter the following:
 #### Enable Logging (Optional)
 The skeleton application generated in the first task included the Actuator and Rest starters.
 These starters depend on `spring-boot-starter-logging` so there is very little work required to enable logging.
+
+##### Edit application.properties
+Edit the application.properties file in the src/main/resources directory.
+Add the following text, remembering to substitute your user id.
+
+```properties
+logging.level.org.springframework=DEBUG
+logging.level.om.example.${your-username}awsbasics=DEBUG
+```
+This will enable very verbose logging for the Spring framework and your application.
+
+##### Add some logging to your application
+
+
+##### Configure a File Appender
