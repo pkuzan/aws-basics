@@ -459,30 +459,18 @@ It is recommended that you paste these values into a temporary text document.
 
 ##### Create Deployment
 * In the AWS Console, select Services, CodeDeploy
-   * Warning, the CodeDeploy web page has been updated. To follow the instructions below, click on `Return to old experience` 
 * Paste your application name in the search text box and select it.
-* In the Deployment groups section, select your Deployment Group radio button - there should be only one. 
-* Press the down-arrow on Actions button and select Deploy new revision. ![](images/deploy-new-revision.png?raw=true)
-* Add the following parameters:
-
-|Parameter | Value |
-| --- | --- |
-| Application | leave default value |
-| Compute platform | EC2/On-premises |
-| Deployment group | leave default value |
-| Deployment type | in-place |
-| Repository type | My application is stored in Amazon S3 |
-| Revision location | paste the S3 URL from the above step |
-| File Type | .zip |
-| Deployment description | Add some witty comment if you feel obliged |
-| Deployment configuration | CodeDeployDefault.OneAtATime |
+![](images/code-deploy-application.png?raw=true)
+* In the Deployment groups drop-down, select your Deployment Group - there should be only one. 
+* Ensure the Revision Type `My Application is is stored in Amazon S3` is selected.
+* Paste the S3 URL into the `Revision Location` text box. 
+![](images/code-deploy-deployment.png?raw=true)
 
 * Leave all other settings default.
-* Press the `Deploy` button.
+* Press the orange `Create deployment` button at the bottom of the screen.
 
-For more information click on the Deployment ID link.  
 All being well you should see a green Deployment Succeeded message.
-![](images/deployment-succeeded.png?raw=true)
+![](images/code-deploy-succeeded.png?raw=true)
 
 #### Test Running Application
 In order to test our deployment, we need to get the URL of the Load Balancer.  
