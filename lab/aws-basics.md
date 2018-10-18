@@ -534,27 +534,6 @@ It will take a couple of minutes for the EC2 instance to spin-up and for the loa
 * Click on the `Instances` tab and you should see 2 in-service instances.
 ![](images/scale-up.png?raw=true)
 
-
-### Scale Vertically (Needs Works - permission issue - replace with another task as essentially the same as above)
-#### Increase EC2 Instance Type
-As above, Service Catalog will be used to increase the size of the EC2 instances in our Auto Scaling Group.
-* In the AWS Console, select Services, Service Catalog
-* Select Provisioned products list 
-* Click on your Auto Scaling Group, it will be named ${your-username}-asg
-* On the right of the screen click on the down-arrow on the `ACTIONS` button and select Update
-* Select the latest Product Version
-* Press the `NEXT` button
-* Scroll down to the  EC2 Instance Configuration section and locate the `InstanceType` parameter
-* Change the value from t2.micro to t2.small
-* Then press the `NEXT` button
-* Then press `UPDATE`
-
-To validate that the EC2 instance type has changed, 
-* Navigate to the Load Balancer screen as in the above task 
-* Click on the `Instances` tab
-* Click on one of the `Instance ID`s
-* Scroll-down and you should see that the `instance type` is now `t2.small`
-
 ### Create Rest Endpoint and Redeploy (optional) Needs Work
 Create a file named `EchoController.java` in `src/main/java/com/example/${your-username}awsbasics`, the directory should 
 already exist.  
