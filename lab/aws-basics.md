@@ -663,6 +663,22 @@ Add the following line to application.properties in the src/main/resources direc
 ```properties
 logging.file=/var/log/aws-basics/application.log
 ```
+The `start_server script` will also need to be modified. It will:
+* Create the logging directory
+* Rotate the file if it exists
+* Touch the file
+  
+Remember to substitute your username. 
+
+```
+#!/bin/bash
+mkdir -p /var/log/aws-basics
+if [ -f /var/log/aws-basics/application.log ]; then mv /var/log/aws-basics/application.log "/var/log/aws-basics/application.log.$(date +"%Y%m%d_%H%M%S")"; fi
+touch /var/log/aws-basics/application.log
+
+java -jar /opt/aws-basics/${your-username}-aws-basics.jar 2> /dev/null > /dev/null < /dev/null &
+```
+
 Rebuild your application and re-deploy as in the steps above.
 SSH onto an EC2 instance.
 
