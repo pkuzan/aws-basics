@@ -277,7 +277,7 @@ hooks:
 
 ```
 
-#### bash scripts
+#### Bash Scripts
 Code Deploy calls shell scripts during the deployment lifecycle.
 
 We are going to create 3 files in the scripts directory.
@@ -628,7 +628,7 @@ Open a Terminal and enter the following:
 CodeDeploy deployments
 `/opt/codedeploy-agent/`
 
-Cloud Formation log
+CloudFormation log
 `/var/log/cfn-init.log`
 
 CodeDeploy logs
@@ -676,7 +676,7 @@ The `start_server.sh` script will also need to be modified. It will:
 * Rotate the log file if it exists
 * Touch the file
   
-Remember to substitute your username. 
+Remember to substitute your username in the jar file name. 
 
 ```
 #!/bin/bash
@@ -695,6 +695,6 @@ cd /var/log/aws-basics
 less application.log 
 ```
 Hint, when using `less`:
-* down-arrow moves a line at a time
+* down / up arrow moves a line at a time
 * space moves a page at a time
 * q quits
