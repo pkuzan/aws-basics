@@ -663,9 +663,9 @@ Add the following line to application.properties in the src/main/resources direc
 ```properties
 logging.file=/var/log/aws-basics/application.log
 ```
-The `start_server script` will also need to be modified. It will:
-* Create the logging directory
-* Rotate the file if it exists
+The `start_server.sh` script will also need to be modified. It will:
+* Create a logging directory
+* Rotate the log file if it exists
 * Touch the file
   
 Remember to substitute your username. 
@@ -686,3 +686,7 @@ SSH onto an EC2 instance.
 cd /var/log/aws-basics
 less application.log 
 ```
+Hint, when using `less`:
+* down-arrow moves a line at a time
+* space moves a page at a time
+* q quits
