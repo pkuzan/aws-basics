@@ -614,7 +614,7 @@ and press the `Open` button.
 ![](images/putty-2.png?raw=true)  
 
 #### Mac / Linux Only 
-##### Set permissions on the key
+##### Set permissions on the key pair
 ```
 chmod 600 ~/.ssh/aws-basics-lab-key-pair.pem
 ```
@@ -625,9 +625,15 @@ Open a Terminal and enter the following:
 
 #### Useful Directories
 
-/opt/codedeploy-agent/
-/var/log/cloud-init.log
-/var/log/cfn-init.log
+CodeDeploy deployments
+`/opt/codedeploy-agent/`
+
+Cloud Formation log
+`/var/log/cfn-init.log`
+
+CodeDeploy logs
+`/var/log/aws/codedeploy-agent`
+
 
 #### Enable Logging (Optional)
 The skeleton application generated in the first task included the Actuator and Rest starters.
