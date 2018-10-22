@@ -251,7 +251,7 @@ aws-basics
 
 
 #### appspec.yml
-AWS Code Deploy requires a deployment descriptor named `appsepc.yml` that describes
+AWS Code Deploy requires a deployment descriptor named `appspec.yml` that describes
 the deployment lifecycle.
 
 In the appspec directory, create a file named `appspec.yml` and copy the contents below.
