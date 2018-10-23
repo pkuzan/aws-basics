@@ -10,7 +10,19 @@ Download from [https://www.java.com/en/download/](https://www.java.com/en/downlo
 Download from [https://maven.apache.org/download.cgi](https://maven.apache.org/download.cgi)
 Select the Binary zip archive.
 Unzip   
-Add to path TODO
+
+The link below contains information on how to set Maven and Java on the path.
+[https://www.java.com/en/download/help/path.xml](https://www.java.com/en/download/help/path.xml)
+
+To check everything is ok, open a Command or Terminal window and type in the following commands:
+
+`java -version`  
+It should respond with a response similar to the below.
+![](images/java-version.png?raw=true)
+
+Same for Maven  
+`mvn - version`  
+![](images/mvn-version.png?raw=true)
 
 #### IDE (Optional)
 Download Intellij Community from [https://www.jetbrains.com/idea](https://www.jetbrains.com/idea)
@@ -667,7 +679,7 @@ Run the application locally as in the task above and observe the logging.
 By default, all logging goes to the console which is useful when the application is 
 run locally, however is not much use when running in the Cloud.
 
-Add the following line to application.properties in the src/main/resources directory.
+Add the following line to application.properties in the `src/main/resources` directory.
 ```properties
 logging.file=/var/log/aws-basics/application.log
 ```
