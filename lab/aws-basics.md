@@ -535,7 +535,7 @@ It will take a couple of minutes for the EC2 instance to spin-up and for the loa
 ![](images/scale-up.png?raw=true)
 
 ### Create Rest Endpoint and Redeploy (optional) Needs Work
-Create a file named `EchoController.java` in `src/main/java/com/example/${your-username}awsbasics`, the directory should 
+Create a file named `HexConverter.java` in `src/main/java/com/example/${your-username}awsbasics`, the directory should 
 already exist.  
 Copy the contents into the newly created file. Make sure you enter your username in the package name.
 E.g. `com.example.user5awsbasics`.
@@ -548,11 +548,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class EchoController {
+public class HexConverter {
+    @GetMapping("/api/tohex")
+    public String toHex(@RequestParam("number") int intToParse) {
+        return Integer.toHexString(intToParse);
+    }
 
-    @GetMapping("/api/echo")
-    public String echo(@RequestParam("input") String input) {
-        return input;
+    @GetMapping("/api/fromhex")
+    public String fromHex(@RequestParam("number") String hexToParse) {
+        int i = Integer.parseInt(hexToParse, 16);
+        return Integer.toString(i);
     }
 }
 ```
@@ -569,12 +574,24 @@ Create a new Deployment as above.
 Enter this URL into your browser, the load balancer URL was discovered in a task above.
 
 ```
-${load-balancer-url}/api/echo?input=hello
+${load-balancer-url}/api/tohex?number=255
 ```
-The response in the browser should be 
+The response in the browser will be 
 ```
-hello
+ff
 ```
+Now test the `fromhex` endpoint.
+```
+${load-balancer-url}/api/fromhex?number=2a
+```
+The response in the browser will be 
+```
+42
+```
+
+#### Optional - Improve Error Handling
+What happens if an invalid number is passed to the endpoint?  
+Enhance the code to return a more meaningful response.
 
 ### SSH onto EC2 (optional)
 #### Get EC2 IP Address
