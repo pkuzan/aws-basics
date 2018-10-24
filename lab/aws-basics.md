@@ -1,15 +1,17 @@
 ## AWS Basics
-Version 1.3   
+Version 1.3.1   
 24th October 2018  
 
 ### Prerequisites
-The following will require Java 8 and Maven to be installed.
+Prerequisites should be in a separate document delivered to attendees before the workshop.  
+
+The following task will require Java 8 and Maven to be installed.
 An IDE such as Intellij is useful, but not mandatory.
 #### Java
 Download from [Java JDK 8 Download Link](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
 #### Maven
-Download from [https://maven.apache.org/download.cgi](https://maven.apache.org/download.cgi)
+Download from [https:/maven.apache.org/download.cgi](https://maven.apache.org/download.cgi)
 Select the Binary zip archive.
 Unzip   
 
@@ -37,11 +39,11 @@ You will have been provided AWS authentication details.
 
 * AWS Account ID
 * Username
-* Temporary password 
+* Temporary password - you will need to change this on first login.
 
 #### Conventions
 In the subsequent tasks, please substitute :
-* `${your-username}` with your username
+* `${your-username}` with your AWS  username
 * `${your-account-id}` with your AWS Account ID 
 
 ### Intro to Lab
@@ -156,7 +158,7 @@ Auto Scaling Group is Service Catalog Product that creates an Auto Scaling Group
 * Select the latest Product Version
 * Press `NEXT`
 * Enter Parameters below
-  * Remember to substitute your account id in the `SSLCertificateArn` parameter value
+  * Remember to substitute your AWS account id (NOT user id) in the `SSLCertificateArn` parameter value
 
 |Parameter | Value |
 | --- | --- |
