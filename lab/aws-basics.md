@@ -1,5 +1,5 @@
 ## AWS Basics
-Version 1.3.1   
+Version 1.3.2   
 24th October 2018  
 
 ### Prerequisites
@@ -481,11 +481,13 @@ It is recommended that you paste these values into a temporary text document.
 * In the AWS Console, select Services, CodeDeploy
 * Paste your application name in the search text box and select it.
 ![](images/code-deploy-application.png?raw=true)
+* Select the `Deployments tab`
+* Press the `Create deployment` button
+![](images/code-deploy-create-deployment.png?raw=true)
 * In the Deployment groups drop-down, select your Deployment Group - there should be only one. 
 * Ensure the Revision Type `My Application is is stored in Amazon S3` is selected.
 * Paste the S3 URL into the `Revision Location` text box. 
 ![](images/code-deploy-deployment.png?raw=true)
-
 * Leave all other settings default.
 * Press the orange `Create deployment` button at the bottom of the screen.
 
