@@ -4,7 +4,7 @@
 The following will require Java 8 and Maven to be installed.
 An IDE such as Intellij is useful, but not mandatory.
 #### Java
-Download from [https://www.java.com/en/download/](https://www.java.com/en/download/)
+Download from [Java JDK 8 Download Link](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
 #### Maven
 Download from [https://maven.apache.org/download.cgi](https://maven.apache.org/download.cgi)
@@ -328,7 +328,11 @@ Code Deploy requires that application binaries, scripts and deployment descripto
 in either a tarball or a zip file. We'll use the Maven Assembly plugin to create a zip file.
 
 You'll need to edit pom.xml in the root of your application. Add the maven-assembly-plugin to the 
-plugins section as in the example below. The spring-boot-maven plugin will already be defined.
+plugins section as in the example below. The spring-boot-maven plugin will already be defined.  
+
+The easiest way to do this is to replace the entire build section. If you just add the assembly plugin,
+remember to add the `finalName` element or your jar file in the zip will be incorrectly named. 
+
 ##### POM.XML
 ```xml
     <build>
@@ -537,7 +541,7 @@ It will take a couple of minutes for the EC2 instance to spin-up and for the loa
 ### Create Rest Endpoint and Redeploy (optional) Needs Work
 Create a file named `HexConverter.java` in `src/main/java/com/example/${your-username}awsbasics`, the directory should 
 already exist.  
-Copy the contents into the newly created file. Make sure you enter your username in the package name.
+Copy the contents below into the newly created file. Make sure you enter your username in the package name.
 E.g. `com.example.user5awsbasics`.
 
 ```java
@@ -726,4 +730,6 @@ less application.log
 Hint, when using `less`:
 * down / up arrow moves a line at a time
 * space moves a page at a time
-* q quits
+* q quits  
+
+[More information on less](https://en.wikipedia.org/wiki/Less_(Unix))
