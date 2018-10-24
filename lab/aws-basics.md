@@ -479,6 +479,8 @@ It is recommended that you paste these values into a temporary text document.
 
 ##### Create Deployment
 * In the AWS Console, select Services, CodeDeploy
+* Click on Applications in the left-hand menu (this may be selected by default).
+![](images/code-deploy-applications.png?raw=true)
 * Paste your application name in the search text box and select it.
 ![](images/code-deploy-application.png?raw=true)
 * Select the `Deployments tab`
