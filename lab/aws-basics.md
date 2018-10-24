@@ -1,4 +1,6 @@
 ## AWS Basics
+Version 1.3   
+24th October 2018  
 
 ### Prerequisites
 The following will require Java 8 and Maven to be installed.
@@ -21,7 +23,7 @@ It should respond with a response similar to the below.
 ![](images/java-version.png?raw=true)
 
 Same for Maven  
-`mvn - version`  
+`mvn -version`  
 ![](images/mvn-version.png?raw=true)
 
 #### IDE (Optional)
