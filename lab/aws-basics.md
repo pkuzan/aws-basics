@@ -1,5 +1,5 @@
 ## AWS Basics
-Version 1.3.2   
+Version 1.3.3  
 24th October 2018  
 
 ### Prerequisites
@@ -741,3 +741,15 @@ Hint, when using `less`:
 * q quits  
 
 [More information on less](https://en.wikipedia.org/wiki/Less_(Unix))
+
+### Clean-up
+### Terminate ASG
+* In the AWS Console, select Services, Service Catalog
+* Select Provisioned products list 
+* Click on the button with 3 vertical dots to the left your Auto Scaling Group, it will be named `${your-username}-asg`
+![](images/service-catalog-pp-update.png?raw=true)  
+* Select `Terminate provisioned product`
+
+### Terminate CodeDeploy
+* As above but for the CodeDeploy provisioned product, it will be named `${your-username}-code-deploy`
+
