@@ -1,5 +1,5 @@
 ## AWS Basics
-Version 1.3.4  
+Version 1.3.5  
 8th November 2018  
 
 ### Prerequisites
@@ -627,20 +627,17 @@ Enhance the code to return a more meaningful response.
 * In the AWS Console, Select Services, S3
 * Click on Bucket whose name starts with `apollo-fcn-cd-code-uu-id-`
 * Click on Folder named `00001`
-* Click on `aws-basics-lab-key-pair.pem`
-* Click download 
-   * On a Mac or Linux download to ~/.ssh
-   * A Mac may rename the file to as it downloads to`aws-basics-lab-key-pair.cer`, rename it back to .pem.
+* Mac
+   - click on `aws-basics-lab-key-pair.pem`
+   - download to ~/.ssh
+   - the file may get renamed as it downloads to`aws-basics-lab-key-pair.cer`, rename it back to .pem.  
+* Windows
+   - click on `aws-basics-lab-key-pair.ppk`
+   - download to a temp folder
 
 #### Windows Only 
 #####  Install Putty
 Download from [https://www.putty.org/](https://www.putty.org/)  
-TODO - Someone with a Windows machine!
-
-##### Convert PEM to PPK
-TODO - Someone with a Windows machine or have the PPK already converted in S3
-* Open PEM in Putty
-* Export as PPK 
 
 ##### Connect Using Putty
 Open Putty
@@ -649,7 +646,7 @@ In the `Host Name (or IP Address)` text box enter:
 (substitute with the IP address of your EC2 instance)  
 ![](images/putty-1.png?raw=true)
 
-Then click on Connection, SSH, Auth and enter the path to the PPK you created in the step above.
+Then click on Connection, SSH, Auth and enter the path to the PPK file you downloaded in the step above.
 and press the `Open` button.  
 
 ![](images/putty-2.png?raw=true)  
@@ -685,7 +682,7 @@ Edit the application.properties file in the src/main/resources directory.
 Add the following text, remembering to substitute your user id.
 
 ```properties
-logging.level.org.springframework=DEBUG
+logging.level.org.springframework=INFO
 logging.level.com.example.${your-username}awsbasics=DEBUG
 ```
 This will enable very verbose logging for the Spring framework and your application.
@@ -707,7 +704,7 @@ private static final Logger LOG = LoggerFactory.getLogger(${your-username}AwsBas
 Add the following as the first line in the main method.
 
 ```java
-LOG.debug("Application Starting");
+LOG.debug("******* Application Starting *******");
 ```
 Run the application locally as in the task above and observe the logging.
  
