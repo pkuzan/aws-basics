@@ -1,6 +1,6 @@
 ## AWS Basics
-Version 1.3.3  
-24th October 2018  
+Version 1.3.4  
+8th November 2018  
 
 ### Prerequisites
 Prerequisites should be in a separate document delivered to attendees before the workshop.  
@@ -423,7 +423,7 @@ Open a Command or Terminal window, change to the directory that contains your ap
 Hint - it has pom.xml in it.
 Type the following command
 ```
-mvn install
+mvn package
 ```
 If you have been successful, a file named `${your-username}-aws-basics.zip` will be created in the target folder.
 
@@ -546,7 +546,7 @@ It will take a couple of minutes for the EC2 instance to spin-up and for the loa
 * Click on the `Instances` tab and you should see 2 in-service instances.
 ![](images/scale-up.png?raw=true)
 
-### Create Rest Endpoint and Redeploy (optional) Needs Work
+### Create Rest Endpoint and Redeploy (optional)
 Create a file named `HexConverter.java` in `src/main/java/com/example/${your-username}awsbasics`, the directory should 
 already exist.  
 Copy the contents below into the newly created file. Make sure you enter your username in the package name.
