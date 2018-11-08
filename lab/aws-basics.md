@@ -691,7 +691,14 @@ logging.level.com.example.${your-username}awsbasics=DEBUG
 This will enable very verbose logging for the Spring framework and your application.
 
 ##### Add some logging to your application
-Add the following declaration to the `${your-username}AwsBasicsApplication` class.
+
+Add the following imports to the `${your-username}AwsBasicsApplication` class.
+```java
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+```
+
+Add the following declaration to the same class.
  
 ```java
 private static final Logger LOG = LoggerFactory.getLogger(${your-username}AwsBasicsApplication.class);
