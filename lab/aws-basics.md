@@ -662,9 +662,15 @@ Open a Terminal and enter the following:
 (substitute with the IP address of your EC2 instance)
 
 #### Useful Directories
+Your application will copied to `/opt/aws-basics/`, this is specified in `appspec.yml`.  
+You can manually start your application from this directory.
 
 CodeDeploy deployments
 `/opt/codedeploy-agent/`
+Your deployments will be copied to:  
+`/opt/codedeploy-agent/${deployment-group-uuid}/${deployment-id}`  
+Inside this directory you'll see deployment logs and the unpacked zip file.  
+This is the best place to look if you have CodeDeploy issues.
 
 CloudFormation log
 `/var/log/cfn-init.log`
