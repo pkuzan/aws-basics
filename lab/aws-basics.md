@@ -701,16 +701,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 ```
 
-Add the following declaration to the same class.
+Add the following declaration to the same class - remember to replace the placeholder with your user id.
  
 ```java
 private static final Logger LOG = LoggerFactory.getLogger(${your-username}AwsBasicsApplication.class);
 ```
 
-Add the following as the first line in the main method.
+Add the following as the last line in the main method, after the `SpringApplication.run` command.
 
 ```java
-LOG.debug("******* Application Starting *******");
+LOG.debug("******* Application Started *******");
 ```
 Run the application locally as in the task above and observe the logging.
  
