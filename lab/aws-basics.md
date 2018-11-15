@@ -1,6 +1,6 @@
 ## AWS Basics
-Version 1.3.5  
-8th November 2018  
+Version 1.3.6  
+15th November 2018  
 
 ### Prerequisites
 Prerequisites should be in a separate document delivered to attendees before the workshop.  
@@ -751,6 +751,24 @@ Hint, when using `less`:
 * q quits  
 
 [More information on less](https://en.wikipedia.org/wiki/Less_(Unix))
+
+### Configure CodeDeploy to wait for successful deployment
+You may have noticed that CodeDeploy reports a successful deployment even if your application fails to start.  
+A simple solution for the start script to exit 0 only on successful application start.   
+Note, the logging exercise must have already been completed for this to work.    
+The log file is tailed until specific text is found. If the text is not found, CodeDeploy will time-out.
+
+Add the following to `start_server.sh` after java -jar is called.
+   
+```
+tail -f /var/log/aws-basics/application.log | while read LOGLINE
+do
+    [[ "${LOGLINE}" == *"Tomcat started on port(s): 443 (https)"* ]] && pkill -P $$ tail
+done
+exit 0
+```
+
+Re-deploy your application.
 
 ### Clean-up
 ### Terminate ASG
