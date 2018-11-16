@@ -1,6 +1,6 @@
 ## AWS Basics
-Version 1.3.6  
-15th November 2018  
+Version 1.3.7  
+16th November 2018  
 
 ### Prerequisites
 Prerequisites should be in a separate document delivered to attendees before the workshop.  
@@ -754,7 +754,7 @@ Hint, when using `less`:
 
 ### Configure CodeDeploy to wait for successful deployment
 You may have noticed that CodeDeploy reports a successful deployment even if your application fails to start.  
-A simple solution for the start script to exit 0 only on successful application start.   
+A simple solution is to modify the start script to exit 0 only on successful application start.   
 Note, the logging exercise must have already been completed for this to work.    
 The log file is tailed until specific text is found. If the text is not found, CodeDeploy will time-out.
 
