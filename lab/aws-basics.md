@@ -691,7 +691,7 @@ Add the following text, remembering to substitute your user id.
 logging.level.org.springframework=INFO
 logging.level.com.example.${your-username}awsbasics=DEBUG
 ```
-This will enable very verbose logging for the Spring framework and your application.
+This will enable logging for the Spring framework and your application.
 
 ##### Add some logging to your application
 
