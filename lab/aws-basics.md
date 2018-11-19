@@ -1,6 +1,6 @@
 ## AWS Basics
-Version 1.3.7  
-16th November 2018  
+Version 1.3.9  
+19th November 2018  
 
 ### Prerequisites
 Prerequisites should be in a separate document delivered to attendees before the workshop.  
@@ -668,7 +668,7 @@ You can manually start your application from this directory.
 CodeDeploy deployments
 `/opt/codedeploy-agent/`
 Your deployments will be copied to:  
-`/opt/codedeploy-agent/${deployment-group-uuid}/${deployment-id}`  
+`/opt/codedeploy-agent/deployment-root/${deployment-group-uuid}/${deployment-id}`  
 Inside this directory you'll see deployment logs and the unpacked zip file.  
 This is the best place to look if you have CodeDeploy issues.
 
