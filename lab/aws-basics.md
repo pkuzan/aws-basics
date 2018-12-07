@@ -46,6 +46,9 @@ In the subsequent tasks, please substitute :
 * `${your-username}` with your AWS  username
 * `${your-account-id}` with your AWS Account ID 
 
+#### Networking
+If you are running a VPN on your personal hardware, you may need to disable it.
+
 ### Intro to Lab
 In this lab attendees will gain hands on experience in provisioning and maintaining Apollo AWS resources by leveraging pre-created Service Catalog products 
 and creating an AWS deployable Spring Boot application. 
