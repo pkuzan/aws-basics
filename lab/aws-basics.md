@@ -56,7 +56,7 @@ and creating an AWS deployable Spring Boot application.
 ### Generate Spring Boot Application.
 In your browser, navigate to [https://start.spring.io/](https://start.spring.io/)
 Change the artifact name to `${your-username}-aws-basics` and add Actuator and Rest Repositories dependencies.  
-Note the version of Spring Boot may differ from the screen-shot below.
+Note the version of Spring Boot may differ from the screen-shot below.  
 Press the Generate Project button and a zip file named `${your-username}-aws-basics.zip` will be downloaded.
 ![](images/initializr.png?raw=true)
 
